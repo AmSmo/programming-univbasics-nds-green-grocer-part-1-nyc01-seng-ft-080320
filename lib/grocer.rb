@@ -23,7 +23,7 @@ def consolidate_cart(cart)
     dict = {}
     items.each do |k,v|
       dict[k] = v
-      if find_item_by_name_in_collection(k, consolidated)
+      if find_item_by_name_in_collection(v, consolidated)
         dict[:count] = 2
       end
     end
