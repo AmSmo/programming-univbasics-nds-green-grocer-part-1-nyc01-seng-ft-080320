@@ -18,18 +18,17 @@ def consolidate_cart(cart)
   #
   # REMEMBER: This returns a new Array that represents the cart. Don't merely
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
+  
   consolidated = []
-  cart.each do |items|
-    dict = {}
-    items.each do |k,v|
-      dict[k] = v
-      if find_item_by_name_in_collection(v, consolidated)
-        dict[:count] = 2
-      end
+  cart.each do |grocery|
+    item = {}
+    if find_item_by_name_in_collection(grocery[:item], consolidated)
+      item[:count] += 1
+    else
+      item[:count] = 1
     end
-    consolidated << dict
+    consolidated << item
   end
-  binding.pry
   consolidated
 end
 
