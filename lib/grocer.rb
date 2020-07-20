@@ -23,8 +23,8 @@ def consolidate_cart(cart)
   cart.each do |grocery|
     item = grocery
     if find_item_by_name_in_collection(grocery[:item], consolidated)
-      consolidated.delete(grocery)
       item[:count] += 1
+      consolidated.delete(grocery)
     else
       item[:count] = 1
     end
