@@ -29,6 +29,7 @@ def consolidate_cart(cart)
     end
     consolidated << dict
   end
+  binding.pry
   consolidated
 end
 
