@@ -5,7 +5,8 @@ def find_item_by_name_in_collection(name, collection)
   # Consult README for inputs and outputs
   collection.each do |k,v|
     if k== name
-      return k
+        return collection
+    end
     end
   
   binding.pry
