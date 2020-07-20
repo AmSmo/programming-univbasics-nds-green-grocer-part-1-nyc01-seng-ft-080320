@@ -26,7 +26,10 @@ def consolidate_cart(cart)
       if cart.count(k) > 1
         items[:count] = cart.count(k)
       end
+    end
     consolidated << dict
+  end
+  consolidated
 end
 
 
